@@ -7,9 +7,6 @@ import java.sql.Date;
  *
  */
 public class Book {
-
-
-
 	private Integer id;
 	private String author;
 	private String title;

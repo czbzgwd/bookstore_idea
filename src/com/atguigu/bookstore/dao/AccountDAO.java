@@ -1,23 +1,16 @@
 package com.atguigu.bookstore.dao;
 
 import com.atguigu.bookstore.domain.Account;
-
-/**
- * 2019��1��7������9:39:16
- *
- */
 public interface AccountDAO {
 
 	/**
-	 * ���� accountId ��ȡ��Ӧ�� Account ����
-	 * 
+	 * 根据 accountId 获取对应的 Account 对象
 	 * @param accountId
 	 * @return
 	 */
 	public abstract Account getAccount(Integer accountId);
 	/**
-	 * ���ݴ���� accountId, amount ����ָ���˻������: �۳� amount ָ����Ǯ��
-	 * 
+	 * 根据传入的 accountId, amount 更新指定账户的余额: 扣除 amount 指定的钱数
 	 * @param accountId
 	 * @param amount
 	 */
