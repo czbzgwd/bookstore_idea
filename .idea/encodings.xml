@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/Book.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/AccountDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/BookDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/TradeDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/TradeItemDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/UserDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/impl/BaseDAO.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/dao/impl/BookDAOImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/Account.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/Book.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/ShoppingCart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/ShoppingCartItem.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/Trade.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/domain/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/test/BaseDAOTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/utils/ReflectionUtils.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/web/CriteriaBook.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/com/atguigu/bookstore/web/Page.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
