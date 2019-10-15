@@ -48,7 +48,9 @@ public class BookServlet extends HttpServlet {
         try {
             pageNo = Integer.parseInt(pageNoStr);
         } catch (NumberFormatException e) {
-
+         //e.printStackTrace();//注意这里不能写该句话否则会报错★
+            //因为页面刚加载pageNoStr为null所以Integer.parseInt(pageNoStr)必然报异常，那么就会
+            //执行catch中的程序，如果catch中没有代码，程序就会往下执行。
         }
         try {
             minPrice = Integer.parseInt(minPriceStr);
@@ -62,7 +64,7 @@ public class BookServlet extends HttpServlet {
         }
         CriteriaBook cb = new CriteriaBook(minPrice,maxPrice,pageNo);
         Page page = bookService.getPage(cb);
-        System.out.println(page.getList());
+        //System.out.println(page.getList());
         request.setAttribute("bookPage",page);
         request.getRequestDispatcher("/WEB-INF/pages/books.jsp").forward(request,response);
     }

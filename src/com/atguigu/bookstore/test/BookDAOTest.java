@@ -17,6 +17,7 @@ public class BookDAOTest {
         Page page = bookDAO.getPage(cb);
         System.out.println(page.getPageNo());
         System.out.println(page.getList());
+        System.out.println(page);
     }
 
     @Test

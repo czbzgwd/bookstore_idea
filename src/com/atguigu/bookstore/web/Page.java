@@ -20,7 +20,7 @@ public class Page<T> {
 		super();
 		this.pageNo = pageNo;
 	}
-	
+
 	//需要校验
 	public int getPageNo() {
 		if(pageNo < 0){
@@ -31,12 +31,12 @@ public class Page<T> {
 		}
 		return pageNo;
 	}
-	
-	
+
+
 	public int getPageSize() {
 		return pageSize;
 	}
-	
+
 	public void setList(List<T> list) {
 		this.list = list;
 	}
@@ -44,7 +44,7 @@ public class Page<T> {
 		return list;
 	}
 	//获取总页数
-	private int getTotalPageNumber(){
+	public int getTotalPageNumber(){
 		int totalPageNumber = (int)totalItemNumber / pageSize;
 		if(totalItemNumber % pageSize != 0){
 			totalPageNumber++;
@@ -85,5 +85,5 @@ public class Page<T> {
 		}
 		return getPageNo();
 	}
-    
+
 }
