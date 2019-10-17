@@ -27,6 +27,29 @@
              */
             window.location.href = href;
             return false;
+        });
+        $("#page").change(function(){
+            //1、获取输入的值
+            var val = $(this).val();
+            //2、去除字符串的头尾空格
+            val = $.trim(val);
+            //3、判断输入的字符是否是数字
+            var flag = false;
+            var reg = /^\d+$/g;
+            var pageNo = 0;
+            if(reg.test(val)){
+               pageNo = parseInt(val);
+              if(pageNo >=1 && pageNo <= parseInt("${bookPage.totalPageNumber}")){
+                  flag = true;
+              }
+            }
+            if(!flag){
+                alert("请输入合法的字符！");
+                $(this).val("");
+                return false;
+            }
+            var href = "bookServlet?method=getBooks&pageNo="+pageNo+"&" +$(":hidden").serialize();
+            window.location.href = href;
         })
     })
 </script>
@@ -72,7 +95,8 @@ ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面�
     <c:if test="${bookPage.hasNext}">
         <a href="bookServlet?method=getBooks&pageNo=${bookPage.nextPage}">下一页</a>
         <a href="bookServlet?method=getBooks&pageNo=${bookPage.totalPageNumber }">末页</a>
-    </c:if>
+    </c:if>&nbsp;&nbsp;
+    跳转到<input type="text" size="1" id = "page"/>页
 </center>
 </body>
 </html>
