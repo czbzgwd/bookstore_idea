@@ -1,5 +1,6 @@
 package com.atguigu.bookstore.servlet;
 
+import com.atguigu.bookstore.domain.Book;
 import com.atguigu.bookstore.service.BookService;
 import com.atguigu.bookstore.web.CriteriaBook;
 import com.atguigu.bookstore.web.Page;
@@ -68,5 +69,16 @@ public class BookServlet extends HttpServlet {
         request.setAttribute("bookPage",page);
         request.getRequestDispatcher("/WEB-INF/pages/books.jsp").forward(request,response);
     }
-
+    //获取书本详情
+    protected void getBookDetail(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        String idStr = request.getParameter("id");
+        int id = 1;
+        try {
+            id = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {}
+        Book book = bookService.getBookDetail(id);
+        System.out.println(book);
+        request.setAttribute("book",book);
+        request.getRequestDispatcher("/WEB-INF/pages/book.jsp").forward(request,response);
+    }
 }

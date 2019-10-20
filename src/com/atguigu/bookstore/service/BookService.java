@@ -8,8 +8,14 @@ import com.atguigu.bookstore.web.Page;
 
 public class BookService {
     private BookDAO bookDAO = new BookDAOImpl();
+    //获取书本分页信息
     public Page<Book> getPage(CriteriaBook cb){
       Page<Book> page = bookDAO.getPage(cb);
       return page;
+    }
+    //获取书本详情
+    public Book getBookDetail(int id){
+        Book book = bookDAO.getBook(id);
+        return book;
     }
 }
