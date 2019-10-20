@@ -5,30 +5,15 @@
   Time: 17:30
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <script type="text/javascript" src="../../script/jquery-1.7.2.min.js"></script>
-<head>
-    <title>网上书城</title>
-</head>
 <script type="text/javascript">
     $(function () {
-        $("a").click(function () {
-            //这段代码的作用就是输入价格区间后点击分页能够实现带上价格区间的页面跳转
-            var serializeVal = $(":hidden").serialize();
-            //serializeVal的值为minPrice=30&maxPrice=60
-            // var serializeVal1 = $(":hidden");//此时serializeVal1的值是object
-            var href = this.href + "&" + serializeVal;
-            /*
-            window.location.href=window.location.href;和window.location.Reload()和都是刷新当前页面。
-            区别在于是否有提交数据。当有提交数据时，window.location.Reload()会提示是否提交，
-            window.location.href=window.location.href;则是向指定的url提交数据
-             */
-            window.location.href = href;
-            return false;
-        });
-        $("#page").change(function(){
+                $("#page").change(function(){
             //1、获取输入的值
             var val = $(this).val();
             //2、去除字符串的头尾空格
@@ -53,6 +38,7 @@
         })
     })
 </script>
+<%@ include file = "/commons/queryCondition.jsp" %>
 <body>
 <center>
     <%--EL表达式${param.xxx}可以从url中获取参数放在页面中直接使用
@@ -60,8 +46,7 @@
 用${param.test1}就可以直接获取到test1的值，也就是3
 用${param.test2}就可以直接获取到test2的值，也就是sss
 ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面或者客户端获取的内容--%>
-    <input type="hidden" name="minPrice" value="${param.minPrice }"/>
-    <input type="hidden" name="maxPrice" value="${param.maxPrice }"/>
+
     <form action="bookServlet?method=getBooks" method="post">
         Price:
         <input type="text" size="1" name="minPrice"/> -
@@ -96,7 +81,11 @@ ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面�
         <a href="bookServlet?method=getBooks&pageNo=${bookPage.nextPage}">下一页</a>
         <a href="bookServlet?method=getBooks&pageNo=${bookPage.totalPageNumber }">末页</a>
     </c:if>&nbsp;&nbsp;
-    跳转到<input type="text" size="1" id = "page"/>页
+        跳转到<input type="text" size="1" id = "page"/>页
 </center>
+
 </body>
+<head>
+    <title>网上书城</title>
+</head>
 </html>
