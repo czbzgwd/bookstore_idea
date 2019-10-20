@@ -72,7 +72,7 @@ ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面�
     <table cellpadding="10">
         <c:forEach items="${bookPage.list }" var="book">
             <tr>
-                <td><a href="bookServlet?method=getBookDetail&id=${book.id}">${book.title }</a>
+                <td><a href="bookServlet?method=getBookDetail&pageNo=${bookPage.pageNo}&id=${book.id}">${book.title }</a>
                     <br>
                         ${book.author}
                 </td>
