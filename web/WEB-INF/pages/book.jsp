@@ -12,35 +12,16 @@
     <title>书本详情</title>
 </head>
 <body>
-<table cellpadding="10">
-    <%--<c:forEach items="${bookDetail.list }" var="book">--%>
-        <tr>
-            <td><h3>${book.title }</h3>
-                <br>
-            </td>
-            <td>
-                    ${book.author}
-            </td>
-            <td>
-                    ${book.price}
-            </td>
-            <td>
-                    ${book.publishingDate}
-            </td>
-            <td>
-                    ${book.salesAmount}
-            </td>
-            <td>
-                    ${book.storeNumber}
-            </td>
-            <td>
-                    ${book.remark}
-            </td>
-            <td>
-                <a href="">加入购物车</a>
-            </td>
-        </tr>
-   <%-- </c:forEach>--%>
-</table>
+<center>
+
+    <br>
+    <br> Title: ${book.title }
+    <br>
+    <br> Author: ${book.author } <br>
+    <br> Price: ${book.price } <br>
+    <br> PublishingDate: ${book.publishingDate } <br>
+    <br> Remark: ${book.remark } <br>
+    <br>
+</center>
 </body>
 </html>
