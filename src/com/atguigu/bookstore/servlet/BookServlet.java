@@ -72,12 +72,20 @@ public class BookServlet extends HttpServlet {
     //获取书本详情
     protected void getBookDetail(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
         String idStr = request.getParameter("id");
-        int id = 1;
+        int id = -1;
+        Book book = null;
         try {
             id = Integer.parseInt(idStr);
         } catch (NumberFormatException e) {}
-        Book book = bookService.getBookDetail(id);
-        System.out.println(book);
+        if(id > 0){
+            book = bookService.getBookDetail(id);
+        }
+        //System.out.println("request.getContextPath():"+request.getContextPath());
+        if(book == null){
+            response.sendRedirect(request.getContextPath()+"/error.jsp");
+            return;
+        }
+        //System.out.println(book);
         request.setAttribute("book",book);
         request.getRequestDispatcher("/WEB-INF/pages/book.jsp").forward(request,response);
     }
