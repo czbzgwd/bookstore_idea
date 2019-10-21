@@ -30,7 +30,7 @@ public class ShoppingCartItem {
 	 * 返回该商品在购物车中的钱数
 	 * @return
 	 */
-	public float getItemPrice(){
+	public float getItemMoney(){
 		return book.getPrice()*quantity;
 	}
 	/**
