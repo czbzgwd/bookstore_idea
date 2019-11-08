@@ -46,7 +46,10 @@
 用${param.test1}就可以直接获取到test1的值，也就是3
 用${param.test2}就可以直接获取到test2的值，也就是sss
 ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面或者客户端获取的内容--%>
-
+    <c:if test="${param.title != null}">您已经将${param.title}放入购物车中</c:if><br>
+     <c:if test="${!empty sessionScope.ShoppingCart}">
+         您的购物车中有${sessionScope.ShoppingCart.bookNumber}本书，<a href="">查看购物车</a>
+     </c:if>
     <form action="bookServlet?method=getBooks" method="post">
         Price:
         <input type="text" size="1" name="minPrice"/> -
@@ -65,7 +68,7 @@ ${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面�
                         ${book.price}
                 </td>
                 <td>
-                    <a href="">加入购物车</a>
+                    <a href="bookServlet?method=addToCart&pageNo=${bookPage.pageNo}&id=${book.id}&title=${book.title }">加入购物车</a>
                 </td>
             </tr>
         </c:forEach>

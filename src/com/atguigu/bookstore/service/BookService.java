@@ -3,6 +3,7 @@ package com.atguigu.bookstore.service;
 import com.atguigu.bookstore.dao.BookDAO;
 import com.atguigu.bookstore.dao.impl.BookDAOImpl;
 import com.atguigu.bookstore.domain.Book;
+import com.atguigu.bookstore.domain.ShoppingCart;
 import com.atguigu.bookstore.web.CriteriaBook;
 import com.atguigu.bookstore.web.Page;
 
@@ -17,5 +18,15 @@ public class BookService {
     public Book getBookDetail(int id){
         Book book = bookDAO.getBook(id);
         return book;
+    }
+    //将书添加进购物车
+    public boolean addToCart(int id, ShoppingCart sc){
+        Book book = bookDAO.getBook(id);
+        if(book != null){
+            sc.addBook(book);
+            return true;
+        }else{
+            return false;
+        }
     }
 }
