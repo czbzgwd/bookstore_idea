@@ -45,10 +45,11 @@
 比如：一个网址：127.0.0.1/test/testparam?test1=3&test2=sss
 用${param.test1}就可以直接获取到test1的值，也就是3
 用${param.test2}就可以直接获取到test2的值，也就是sss
-${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面或者客户端获取的内容--%>
+${param.xxx} 就等价于 request.getparam("xxx")，也就是服务器从页面或者客户端获取的内容
+sessionScope指的是session的范围，类似还有requestScope，pageScope,contextScope--%>
     <c:if test="${param.title != null}">您已经将${param.title}放入购物车中</c:if><br>
      <c:if test="${!empty sessionScope.ShoppingCart}">
-         您的购物车中有${sessionScope.ShoppingCart.bookNumber}本书，<a href="">查看购物车</a>
+         您的购物车中有${sessionScope.ShoppingCart.bookNumber}本书，<a href="bookServlet?method=toCartPage&pageNo=${bookpage.pageNo }">查看购物车</a>
      </c:if>
     <form action="bookServlet?method=getBooks" method="post">
         Price:

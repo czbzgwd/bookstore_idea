@@ -39,6 +39,12 @@ public class BookServlet extends HttpServlet {
 
     }
 
+    protected void toCartPage(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        request.getRequestDispatcher("/WEB-INF/pages/cart.jsp").forward(request, response);
+
+    }
     protected void getBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //获取页面参数
         String pageNoStr = request.getParameter("pageNo");
