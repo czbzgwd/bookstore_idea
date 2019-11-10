@@ -43,6 +43,8 @@ public class BookServlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.getRequestDispatcher("/WEB-INF/pages/cart.jsp").forward(request, response);
+        //web-inf目录下的文件只能通过请求转发来访问，不能通过页面重定向访问。
+        //response.sendRedirect("/WEB-INF/pages/cart.jsp");
 
     }
     protected void getBooks(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

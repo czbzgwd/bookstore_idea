@@ -39,5 +39,12 @@ public class ShoppingCartItem {
 	public void increment(){
 		 quantity++;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "ShoppingCartItem{" +
+				"book=" + book +
+				", quantity=" + quantity +
+				'}';
+	}
 }

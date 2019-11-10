@@ -12,12 +12,35 @@
     <title>Title</title>
 </head>
 <body>
-     书的数量${sessionScope.ShoppingCart.bookNumber}
-<br>
-     <c:forEach items="${sessionScope.ShoppingCart.items}" var = "item">
-       ${item.book.title}-${item.book.price}-${item.quantity}
+<center>
+    您的购物车中共有：${sessionScope.ShoppingCart.bookNumber}本书
 
-     </c:forEach>
+    <br>
+    <table cellpadding="10">
+    <tr>
+        <td>书名</td>
+        <td>数量</td>
+        <td>价格</td>
+    </tr>
 
+        <c:forEach items="${sessionScope.ShoppingCart.items}" var="item">
+    <tr>
+        <td>${item.book.title}</td>
+        <td>${item.book.price}</td>
+        <td>${item.quantity}</td>
+        <td><a href="">删除</a></td>
+    </tr>
+        </c:forEach>
+        <br>
+        <tr colspan="4">
+            总金额：${sessionScope.ShoppingCart.totalMoney}
+        </tr>
+        <tr colspan="4">
+            <td><a href="">继续购物</a></td>
+            <td><a href="">清空购物车</a></td>
+            <td><a href="">结账</a></td>
+        </tr>
+    </table>
+</center>
 </body>
 </html>
